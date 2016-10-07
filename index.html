@@ -13,8 +13,8 @@
     <meta name="twitter:title" content="Care Force Lumber Calculator">
     <title>Lumber Calculator</title>
     <link href="https://fonts.googleapis.com/css?family=Overlock+SC|PT+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="styles/css/main.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="styles/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="style/css/main.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="style/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
@@ -96,7 +96,7 @@
                                 <div class="form-group">
 
                                     <label class="control-label schem-label" for="schem-select">Schematic: </label>
-                                    <select id="schem_selected" name="schem-select" class="schem-selected form-control input-sm" ng-model="schem_selected" ng-change="schem_change(schem_selected)" required>
+                                    <select id="schem_selected" name="schem-select" class="schem-selected form-control input-sm" ng-model="schem_selected" ng-change="schem_change(schem_selected)" required autofocus>
 
                                  <option ng-repeat="schematic in schematics">{{ schematic.name }}</option>
                               </select>
@@ -169,11 +169,11 @@
 
 
     <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <!-- AngularJS -->
     <script type="text/javascript" src="http://code.angularjs.org/1.5.5/angular.min.js"></script>
     <!-- local files -->
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="script/index.js"></script>
 
 
 </body>
