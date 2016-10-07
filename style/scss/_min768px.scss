@@ -107,43 +107,47 @@ $link-hover: #0af;
 
             form {
 
-              .form-inline {
-                height: 9rem;
-                position: relative;
-              }
+              fieldset {
+                width: auto;
 
-              .schem-selected {
-                margin: 1.5rem .5rem 0 0;
-              }
+                  .form-inline {
+                    height: 9rem;
+                    position: relative;
+                  }
 
-              .schem-label {
-                margin: 2rem .5rem 0 -2rem;
-              }
+                  .schem-selected {
+                    margin: 1.5rem .5rem 0 0;
+                  }
 
-              .quantity {
-                margin: 1.5rem .5rem 0 0;
-              }
+                  .schem-label {
+                    margin: 2rem .5rem 0 -2rem;
+                  }
 
-              .quant-label {
-                clear: none;
-                margin: 2rem .5rem 0 1rem;
-              }
+                  .quantity {
+                    margin: 1.5rem .5rem 0 0;
+                  }
 
-              .calc-button {
-                line-height: 1.3;
-                margin: 1rem 0 0 2.5rem;
-              }
+                  .quant-label {
+                    clear: none;
+                    margin: 2rem .5rem 0 1rem;
+                  }
 
-              .preview-div {
-                display: inline-block;
-              }
+                  .calc-button {
+                    line-height: 1.3;
+                    margin: 1rem 0 0 2.5rem;
+                  }
 
-              .preview-image {
-                border-radius: .5rem;
-                box-shadow: 0 .5rem .8rem 0 rgba(0, 0, 0, .7);
-                margin: -16rem auto 0;
-                transition: all .25s;
-                width: 5rem;
+                  .preview-div {
+                    display: inline-block;
+                  }
+
+                  .preview-image {
+                    border-radius: .5rem;
+                    box-shadow: 0 .5rem .8rem 0 rgba(0, 0, 0, .7);
+                    margin: -16rem auto 0;
+                    transition: all .25s;
+                    width: 5rem;
+                  }
               }
             }
 

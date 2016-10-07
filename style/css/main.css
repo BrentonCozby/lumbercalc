@@ -177,78 +177,91 @@
               font-weight: 600; }
           body .wrapper main .main-wrapper .calculator {
             display: none; }
-            body .wrapper main .main-wrapper .calculator form .form-group {
-              margin: 1.5rem 0 0; }
-            body .wrapper main .main-wrapper .calculator form .schem-selected {
-              box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.2);
-              float: left;
-              font-size: 1.6rem;
-              height: 3.5rem;
-              margin: .5rem .5rem 0 0;
-              width: 19.1rem; }
-              body .wrapper main .main-wrapper .calculator form .schem-selected option {
-                font-size: 1.6rem; }
-              body .wrapper main .main-wrapper .calculator form .schem-selected:focus, body .wrapper main .main-wrapper .calculator form .schem-selected:hover {
-                border-color: #ddd;
-                box-shadow: inset 0 0 .6rem orange;
-                outline: none; }
-            body .wrapper main .main-wrapper .calculator form .schem-label {
-              float: left;
-              margin: .9rem .5rem 0; }
-            body .wrapper main .main-wrapper .calculator form .quantity {
-              box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.2);
-              float: left;
-              font-size: 1.6rem;
-              height: 3.5rem;
-              margin: 3.5rem .5rem 0 .8rem;
-              width: 5rem; }
-              body .wrapper main .main-wrapper .calculator form .quantity:focus, body .wrapper main .main-wrapper .calculator form .quantity:hover {
-                border-color: #ddd;
-                box-shadow: inset 0 0 .6rem orange;
-                outline: none; }
-            body .wrapper main .main-wrapper .calculator form .quant-label {
-              clear: left;
-              float: left;
-              margin: 4rem .5rem 0; }
-            body .wrapper main .main-wrapper .calculator form .quantity-group input[type=number]::-webkit-inner-spin-button, body .wrapper main .main-wrapper .calculator form .quantity-group input[type=number]::-webkit-outer-spin-button {
-              margin: 0; }
-            body .wrapper main .main-wrapper .calculator form .calc-button,
-            body .wrapper main .main-wrapper .calculator form .form-group label {
-              font-family: "Overlock SC", serif;
-              font-size: 1.6rem;
-              height: 3.5rem; }
-            body .wrapper main .main-wrapper .calculator form .calc-button {
-              background: #ddd;
-              border: 0;
-              border-radius: 2rem;
-              box-shadow: 0 0.1rem 0.2rem, inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.5), inset 0 -0.1rem 0.2rem rgba(0, 0, 0, 0.2);
-              float: left;
-              line-height: 1;
-              margin: 3.5rem 0 0 2.5rem; }
-              body .wrapper main .main-wrapper .calculator form .calc-button:focus, body .wrapper main .main-wrapper .calculator form .calc-button:hover {
-                background-color: #eee;
-                outline: none; }
-              body .wrapper main .main-wrapper .calculator form .calc-button:focus {
-                box-shadow: 0 0.1rem 0.2rem, inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.5), inset 0 -0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0 0.7rem 0.1rem orange; }
-              body .wrapper main .main-wrapper .calculator form .calc-button:active {
-                box-shadow: inset 0 .1rem .1rem;
-                outline: none;
-                position: relative;
-                top: .1rem;
-                transform: scale(0.98, 0.98); }
-            body .wrapper main .main-wrapper .calculator form .preview-image {
-              border: 1px solid black;
-              border-radius: .4rem;
-              box-shadow: 0.1rem 0.2rem 0.1rem 0 rgba(0, 0, 0, 0.4);
-              margin: 3.3rem 0 0 2.1rem;
-              position: absolute;
-              transition: all .15s;
-              width: 3.6rem;
-              z-index: 2; }
-            body .wrapper main .main-wrapper .calculator form .validate {
-              color: #d11;
-              display: block;
-              font-size: 1.2rem; }
+            body .wrapper main .main-wrapper .calculator form fieldset {
+              width: 310px;
+              margin: auto; }
+              body .wrapper main .main-wrapper .calculator form fieldset .form-group {
+                margin: 1.5rem 0 0; }
+              body .wrapper main .main-wrapper .calculator form fieldset .schem-selected {
+                box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.2);
+                float: left;
+                font-size: 1.6rem;
+                height: 3.5rem;
+                margin: .5rem .5rem 0 0;
+                width: 19.1rem; }
+                body .wrapper main .main-wrapper .calculator form fieldset .schem-selected option {
+                  font-size: 1.6rem; }
+                body .wrapper main .main-wrapper .calculator form fieldset .schem-selected:focus, body .wrapper main .main-wrapper .calculator form fieldset .schem-selected:hover {
+                  border-color: #ddd;
+                  box-shadow: inset 0 0 .6rem orange;
+                  outline: none; } }
+            @media screen and (min-width: 200px) and (min-width: 340px) {
+              body .wrapper main .main-wrapper .calculator form fieldset .schem-selected {
+                width: 22rem; } }
+
+@media screen and (min-width: 200px) {
+              body .wrapper main .main-wrapper .calculator form fieldset .schem-label {
+                float: left;
+                margin: .9rem .5rem 0; }
+              body .wrapper main .main-wrapper .calculator form fieldset .quantity {
+                box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.2);
+                float: left;
+                font-size: 1.6rem;
+                height: 3.5rem;
+                margin: 3.5rem .5rem 0 .8rem;
+                width: 5rem; }
+                body .wrapper main .main-wrapper .calculator form fieldset .quantity:focus, body .wrapper main .main-wrapper .calculator form fieldset .quantity:hover {
+                  border-color: #ddd;
+                  box-shadow: inset 0 0 .6rem orange;
+                  outline: none; }
+              body .wrapper main .main-wrapper .calculator form fieldset .quant-label {
+                clear: left;
+                float: left;
+                margin: 4rem .5rem 0; }
+              body .wrapper main .main-wrapper .calculator form fieldset .quantity-group input[type=number]::-webkit-inner-spin-button, body .wrapper main .main-wrapper .calculator form fieldset .quantity-group input[type=number]::-webkit-outer-spin-button {
+                margin: 0; }
+              body .wrapper main .main-wrapper .calculator form fieldset .calc-button,
+              body .wrapper main .main-wrapper .calculator form fieldset .form-group label {
+                font-family: "Overlock SC", serif;
+                font-size: 1.6rem;
+                height: 3.5rem; }
+              body .wrapper main .main-wrapper .calculator form fieldset .calc-button {
+                background: #ddd;
+                border: 0;
+                border-radius: 2rem;
+                box-shadow: 0 0.1rem 0.2rem, inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.5), inset 0 -0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+                float: left;
+                line-height: 1;
+                margin: 3.5rem 0 0 2.5rem; }
+                body .wrapper main .main-wrapper .calculator form fieldset .calc-button:focus, body .wrapper main .main-wrapper .calculator form fieldset .calc-button:hover {
+                  background-color: #eee;
+                  outline: none; }
+                body .wrapper main .main-wrapper .calculator form fieldset .calc-button:focus {
+                  box-shadow: 0 0.1rem 0.2rem, inset 0 0.1rem 0.2rem rgba(255, 255, 255, 0.5), inset 0 -0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0 0.7rem 0.1rem orange; }
+                body .wrapper main .main-wrapper .calculator form fieldset .calc-button:active {
+                  box-shadow: inset 0 .1rem .1rem;
+                  outline: none;
+                  position: relative;
+                  top: .1rem;
+                  transform: scale(0.98, 0.98); }
+              body .wrapper main .main-wrapper .calculator form fieldset .preview-image {
+                border: 1px solid black;
+                border-radius: .4rem;
+                box-shadow: 0.1rem 0.2rem 0.1rem 0 rgba(0, 0, 0, 0.4);
+                margin: 3.3rem 0 0 2.1rem;
+                position: absolute;
+                transition: all .15s;
+                width: 3.6rem;
+                z-index: 2; }
+              body .wrapper main .main-wrapper .calculator form fieldset .validate {
+                color: #d11;
+                display: block;
+                font-size: 1.2rem; } }
+          @media screen and (min-width: 200px) and (min-width: 340px) {
+            body .wrapper main .main-wrapper .calculator form fieldset {
+              width: 330px; } }
+
+@media screen and (min-width: 200px) {
             body .wrapper main .main-wrapper .calculator .table-div {
               display: none;
               margin-top: 1rem; }
@@ -465,29 +478,31 @@
       body .wrapper .main .main-wrapper .about p,
       body .wrapper .main .main-wrapper .about span {
         font-size: 1.7rem; }
-    body .wrapper .main .main-wrapper .calculator form .form-inline {
-      height: 9rem;
-      position: relative; }
-    body .wrapper .main .main-wrapper .calculator form .schem-selected {
-      margin: 1.5rem .5rem 0 0; }
-    body .wrapper .main .main-wrapper .calculator form .schem-label {
-      margin: 2rem .5rem 0 -2rem; }
-    body .wrapper .main .main-wrapper .calculator form .quantity {
-      margin: 1.5rem .5rem 0 0; }
-    body .wrapper .main .main-wrapper .calculator form .quant-label {
-      clear: none;
-      margin: 2rem .5rem 0 1rem; }
-    body .wrapper .main .main-wrapper .calculator form .calc-button {
-      line-height: 1.3;
-      margin: 1rem 0 0 2.5rem; }
-    body .wrapper .main .main-wrapper .calculator form .preview-div {
-      display: inline-block; }
-    body .wrapper .main .main-wrapper .calculator form .preview-image {
-      border-radius: .5rem;
-      box-shadow: 0 0.5rem 0.8rem 0 rgba(0, 0, 0, 0.7);
-      margin: -16rem auto 0;
-      transition: all .25s;
-      width: 5rem; }
+    body .wrapper .main .main-wrapper .calculator form fieldset {
+      width: auto; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .form-inline {
+        height: 9rem;
+        position: relative; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .schem-selected {
+        margin: 1.5rem .5rem 0 0; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .schem-label {
+        margin: 2rem .5rem 0 -2rem; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .quantity {
+        margin: 1.5rem .5rem 0 0; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .quant-label {
+        clear: none;
+        margin: 2rem .5rem 0 1rem; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .calc-button {
+        line-height: 1.3;
+        margin: 1rem 0 0 2.5rem; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .preview-div {
+        display: inline-block; }
+      body .wrapper .main .main-wrapper .calculator form fieldset .preview-image {
+        border-radius: .5rem;
+        box-shadow: 0 0.5rem 0.8rem 0 rgba(0, 0, 0, 0.7);
+        margin: -16rem auto 0;
+        transition: all .25s;
+        width: 5rem; }
     body .wrapper .main .main-wrapper .calculator .table-div {
       padding-top: 1rem; }
       body .wrapper .main .main-wrapper .calculator .table-div table thead tr th {

@@ -254,114 +254,131 @@ $link-hover: #0af;
 
             form {
 
-              .form-group {
-                margin: 1.5rem 0 0;
+              fieldset {
+                width: 310px;
+                margin: auto;
+
+                  .form-group {
+                    margin: 1.5rem 0 0;
+                  }
+
+                  .schem-selected {
+                    box-shadow: inset 0 0 .6rem rgba(0, 0, 0, .2);
+                    float: left;
+                    font-size: 1.6rem;
+                    height: 3.5rem;
+                    margin: .5rem .5rem 0 0;
+                    width: 19.1rem;
+
+                    option {
+                      font-size: 1.6rem;
+                    }
+
+                    &:focus,
+                    &:hover {
+                      border-color: #ddd;
+                      box-shadow: inset 0 0 .6rem orange;
+                      outline: none;
+                    }
+                  }
+
+                  @media screen and (min-width: 340px) {
+                    .schem-selected {
+                        width: 22rem;
+                    }
+                  }
+
+                  .schem-label {
+                    float: left;
+                    margin: .9rem .5rem 0;
+                  }
+
+                  .quantity {
+                    box-shadow: inset 0 0 .6rem rgba(0, 0, 0, .2);
+                    float: left;
+                    font-size: 1.6rem;
+                    height: 3.5rem;
+                    margin: 3.5rem .5rem 0 .8rem;
+                    width: 5rem;
+
+                    &:focus,
+                    &:hover {
+                      border-color: #ddd;
+                      box-shadow: inset 0 0 .6rem orange;
+                      outline: none;
+                    }
+                  }
+
+                  .quant-label {
+                    clear: left;
+                    float: left;
+                    margin: 4rem .5rem 0;
+                  }
+
+                  .quantity-group input[type=number] {
+
+                    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+                      margin: 0;
+                    }
+                  }
+
+                  .calc-button,
+                  .form-group label {
+                    font-family: "Overlock SC", serif;
+                    font-size: 1.6rem;
+                    height: 3.5rem;
+                  }
+
+                  .calc-button {
+                    background: #ddd;
+                    border: 0;
+                    border-radius: 2rem;
+                    box-shadow: 0 .1rem .2rem, inset 0 .1rem .2rem rgba(255, 255, 255, .5), inset 0 -.1rem .2rem rgba(0, 0, 0, .2);
+                    float: left;
+                    line-height: 1;
+                    margin: 3.5rem 0 0 2.5rem;
+
+                    &:focus,
+                    &:hover {
+                      background-color: #eee;
+                      outline: none;
+                    }
+
+                    &:focus {
+                      box-shadow: 0 .1rem .2rem, inset 0 .1rem .2rem rgba(255, 255, 255, .5), inset 0 -.1rem .2rem rgba(0, 0, 0, .2), 0 0 .7rem .1rem orange;
+                    }
+
+                    &:active {
+                      box-shadow: inset 0 .1rem .1rem;
+                      outline: none;
+                      position: relative;
+                      top: .1rem;
+                      transform: scale(.98, .98);
+                    }
+                  }
+
+                  .preview-image {
+                    border: 1px solid black;
+                    border-radius: .4rem;
+                    box-shadow: .1rem .2rem .1rem 0 rgba(0, 0, 0, .4);
+                    margin: 3.3rem 0 0 2.1rem;
+                    position: absolute;
+                    transition: all .15s;
+                    width: 3.6rem;
+                    z-index: 2;
+                  }
+
+                  .validate {
+                    color: #d11;
+                    display: block;
+                    font-size: 1.2rem;
+                  }
               }
 
-              .schem-selected {
-                box-shadow: inset 0 0 .6rem rgba(0, 0, 0, .2);
-                float: left;
-                font-size: 1.6rem;
-                height: 3.5rem;
-                margin: .5rem .5rem 0 0;
-                width: 19.1rem;
-
-                option {
-                  font-size: 1.6rem;
-                }
-
-                &:focus,
-                &:hover {
-                  border-color: #ddd;
-                  box-shadow: inset 0 0 .6rem orange;
-                  outline: none;
-                }
-              }
-
-              .schem-label {
-                float: left;
-                margin: .9rem .5rem 0;
-              }
-
-              .quantity {
-                box-shadow: inset 0 0 .6rem rgba(0, 0, 0, .2);
-                float: left;
-                font-size: 1.6rem;
-                height: 3.5rem;
-                margin: 3.5rem .5rem 0 .8rem;
-                width: 5rem;
-
-                &:focus,
-                &:hover {
-                  border-color: #ddd;
-                  box-shadow: inset 0 0 .6rem orange;
-                  outline: none;
-                }
-              }
-
-              .quant-label {
-                clear: left;
-                float: left;
-                margin: 4rem .5rem 0;
-              }
-
-              .quantity-group input[type=number] {
-
-                &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
-                  margin: 0;
-                }
-              }
-
-              .calc-button,
-              .form-group label {
-                font-family: "Overlock SC", serif;
-                font-size: 1.6rem;
-                height: 3.5rem;
-              }
-
-              .calc-button {
-                background: #ddd;
-                border: 0;
-                border-radius: 2rem;
-                box-shadow: 0 .1rem .2rem, inset 0 .1rem .2rem rgba(255, 255, 255, .5), inset 0 -.1rem .2rem rgba(0, 0, 0, .2);
-                float: left;
-                line-height: 1;
-                margin: 3.5rem 0 0 2.5rem;
-
-                &:focus,
-                &:hover {
-                  background-color: #eee;
-                  outline: none;
-                }
-
-                &:focus {
-                  box-shadow: 0 .1rem .2rem, inset 0 .1rem .2rem rgba(255, 255, 255, .5), inset 0 -.1rem .2rem rgba(0, 0, 0, .2), 0 0 .7rem .1rem orange;
-                }
-
-                &:active {
-                  box-shadow: inset 0 .1rem .1rem;
-                  outline: none;
-                  position: relative;
-                  top: .1rem;
-                  transform: scale(.98, .98);
-                }
-              }
-
-              .preview-image {
-                border: 1px solid black;
-                border-radius: .4rem;
-                box-shadow: .1rem .2rem .1rem 0 rgba(0, 0, 0, .4);
-                margin: 3.3rem 0 0 2.1rem;
-                position: absolute;
-                transition: all .15s;
-                width: 3.6rem;
-                z-index: 2;
-              }
-
-              .validate {
-                color: #d11;
-                display: block;
-                font-size: 1.2rem;
+              @media screen and (min-width: 340px) {
+                  fieldset {
+                      width: 330px;
+                  }
               }
             }
 
