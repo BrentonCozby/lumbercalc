@@ -1,0 +1,26 @@
+{
+  "name": "lumbercalc",
+  "version": "1.0.0",
+  "description": "Optimizes lumber orders for Care Force schematics.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss style/scss/main.scss style/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrentonCozby/lumbercalc.git"
+  },
+  "author": "Brenton Cozby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrentonCozby/lumbercalc/issues"
+  },
+  "homepage": "https://github.com/BrentonCozby/lumbercalc#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^3.10.1",
+    "nodemon": "^1.11.0"
+  }
+}

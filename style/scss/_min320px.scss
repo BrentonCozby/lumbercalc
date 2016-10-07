@@ -1,0 +1,632 @@
+@mixin heading {
+  font-family: "Overlock SC", serif;
+  font-size: 2.5rem;
+}
+
+$link-hover: #0af;
+
+@media screen and (min-width: 200px) {
+
+  body,
+  html {
+    background-attachment: fixed;
+    background-image: url('http://i.imgur.com/q1hH0mw.png');
+    background-size: 200% 100%;
+    font-family: 'PT Sans', sans-serif;
+    height: 100%;
+    min-width: 320px;
+    position: relative;
+  }
+
+  body {
+    display: none;
+
+    .overlay {
+      background: black;
+      bottom: 0;
+      display: none;
+      left: 0;
+      opacity: .5;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    .wrapper {
+      display: table;
+      height: 100%;
+      margin: auto;
+      text-align: center;
+      width: 100%;
+
+      header {
+        background-color: orange;
+        display: table-row;
+        height: 1px;
+        width: 100%;
+
+        nav {
+          box-shadow: 0 0 1.5rem;
+
+          .menu {
+            display: inline-block;
+
+            .menu-button {
+
+              button {
+                background: #d80;
+                border: 1px solid #d90;
+                border-radius: .5rem;
+                box-shadow: .1rem .1rem .1rem 0, inset .1rem .1rem .2rem rgba(255, 255, 255, .9);
+                left: .8rem;
+                margin: 0 1rem 0 0;
+                position: absolute;
+                top: 1rem;
+
+                &:focus,
+                &:hover {
+                  background-color: orange;
+                  outline: none;
+                }
+
+                &:focus {
+                  box-shadow: .1rem .1rem .1rem 0, inset .1rem .1rem .2rem rgba(255, 255, 255, .9), 0 0 .5rem .3rem white;
+                }
+
+                &:active {
+                  box-shadow: inset .1rem .1rem .2rem;
+                }
+
+                p {
+                  color: #fff;
+                  display: table-cell;
+                  font-family: 'Overlock SC', sans-serif;
+                  padding: .4rem .3rem;
+                  vertical-align: middle;
+                }
+              }
+            }
+
+            .menu-items {
+              background-color: #444;
+              display: none;
+              float: right;
+              height: 100%;
+              left: -16rem;
+              position: absolute;
+              top: 0;
+              width: 16rem;
+              z-index: 3;
+
+              .menu-header {
+                background-color: #555;
+
+                .menu-word {
+                  color: #ddd;
+                  display: inline-block;
+                  font-family: "Overlock SC", serif;
+                  font-size: 1.8rem;
+                  line-height: 2.5;
+                  margin: 0;
+                  padding: 0 0 0 1.5rem;
+                  text-align: left;
+                  width: 90%;
+                }
+
+                .close {
+                  color: #ccc;
+                  display: inline-block;
+                  float: right;
+                  font-family: "Overlock SC", serif;
+                  font-size: 3.5rem;
+                  font-weight: normal;
+                  line-height: 1;
+                  margin-top: .2rem;
+                  opacity: 1;
+                  position: relative;
+                  right: 1rem;
+                  text-shadow: none;
+                  transition: all .3s;
+                  width: 10%;
+
+                  &:focus,
+                  &:hover {
+                    color: orange;
+                  }
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+
+              ul {
+                border-top: .3rem solid #777;
+
+                li {
+                  clear: both;
+                  color: #eee;
+                  display: block;
+                  font-family: "Overlock SC", serif;
+                  font-size: 1.4rem;
+                  line-height: 2.5;
+                  margin-top: -.5rem;
+                  padding: 0 0 0 1.5rem;
+                  text-align: left;
+                  transition: all .3s;
+
+                  &:first-child {
+                    margin-top: 0;
+                  }
+
+                  &:focus,
+                  &:hover {
+                    background-color: #333;
+                    color: orange;
+                    cursor: pointer;
+                    text-decoration: none;
+                  }
+                }
+
+                .active {
+                  color: #aaa;
+                  cursor: default;
+
+                  &:focus,
+                  &:hover {
+                    background-color: #444;
+                    color: #aaa;
+                    cursor: default;
+                  }
+                }
+              }
+            }
+          }
+
+          .title {
+            display: inline-block;
+            font-family: "Overlock SC", serif;
+            line-height: 1.7;
+            margin: 0;
+            text-align: center;
+            text-shadow: -.1rem -.1rem .1rem #ddd;
+
+            span {
+              font-size: 2.8rem;
+            }
+          }
+        }
+      }
+
+      main {
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 .5rem 2rem;
+        font-family: 'PT Sans', sans-serif;
+        height: 90%;
+        margin: 2rem 1rem;
+
+        .main-wrapper {
+          margin: 0 10px;
+
+          .about {
+            display: none;
+            margin: 2rem auto auto;
+            max-width: 60rem;
+            padding-bottom: 1rem;
+            text-align: left;
+
+            .heading {
+              @include heading;
+            }
+
+            a,
+            p,
+            span {
+              font-size: 1.5rem;
+              line-height: 1.5;
+            }
+
+            a {
+              border-bottom: 1px solid transparent;
+              transition: all .3s;
+
+              &:hover {
+                border-color: $link-hover;
+                color: $link-hover;
+                text-decoration: none;
+              }
+            }
+
+            p {
+              padding-top: 1rem;
+            }
+
+            span {
+              font-family: "Overlock SC", serif;
+              font-weight: 600;
+            }
+          }
+
+          .calculator {
+            display: none;
+
+            form {
+
+              .form-group {
+                margin: 1.5rem 0 0;
+              }
+
+              .schem-selected {
+                box-shadow: inset 0 0 .6rem rgba(0, 0, 0, .2);
+                float: left;
+                font-size: 1.6rem;
+                height: 3.5rem;
+                margin: .5rem .5rem 0 0;
+                width: 19.1rem;
+
+                option {
+                  font-size: 1.6rem;
+                }
+
+                &:focus,
+                &:hover {
+                  border-color: #ddd;
+                  box-shadow: inset 0 0 .6rem orange;
+                  outline: none;
+                }
+              }
+
+              .schem-label {
+                float: left;
+                margin: .9rem .5rem 0;
+              }
+
+              .quantity {
+                box-shadow: inset 0 0 .6rem rgba(0, 0, 0, .2);
+                float: left;
+                font-size: 1.6rem;
+                height: 3.5rem;
+                margin: 3.5rem .5rem 0 .8rem;
+                width: 5rem;
+
+                &:focus,
+                &:hover {
+                  border-color: #ddd;
+                  box-shadow: inset 0 0 .6rem orange;
+                  outline: none;
+                }
+              }
+
+              .quant-label {
+                clear: left;
+                float: left;
+                margin: 4rem .5rem 0;
+              }
+
+              .quantity-group input[type=number] {
+
+                &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+                  margin: 0;
+                }
+              }
+
+              .calc-button,
+              .form-group label {
+                font-family: "Overlock SC", serif;
+                font-size: 1.6rem;
+                height: 3.5rem;
+              }
+
+              .calc-button {
+                background: #ddd;
+                border: 0;
+                border-radius: 2rem;
+                box-shadow: 0 .1rem .2rem, inset 0 .1rem .2rem rgba(255, 255, 255, .5), inset 0 -.1rem .2rem rgba(0, 0, 0, .2);
+                float: left;
+                line-height: 1;
+                margin: 3.5rem 0 0 2.5rem;
+
+                &:focus,
+                &:hover {
+                  background-color: #eee;
+                  outline: none;
+                }
+
+                &:focus {
+                  box-shadow: 0 .1rem .2rem, inset 0 .1rem .2rem rgba(255, 255, 255, .5), inset 0 -.1rem .2rem rgba(0, 0, 0, .2), 0 0 .7rem .1rem orange;
+                }
+
+                &:active {
+                  box-shadow: inset 0 .1rem .1rem;
+                  outline: none;
+                  position: relative;
+                  top: .1rem;
+                  transform: scale(.98, .98);
+                }
+              }
+
+              .preview-image {
+                border: 1px solid black;
+                border-radius: .4rem;
+                box-shadow: .1rem .2rem .1rem 0 rgba(0, 0, 0, .4);
+                margin: 3.3rem 0 0 2.1rem;
+                position: absolute;
+                transition: all .15s;
+                width: 3.6rem;
+                z-index: 2;
+              }
+
+              .validate {
+                color: #d11;
+                display: block;
+                font-size: 1.2rem;
+              }
+            }
+
+            .table-div {
+              display: none;
+              margin-top: 1rem;
+
+              table {
+                margin: 0;
+
+                tr {
+                  a,
+                  td,
+                  th {
+                    font-size: 1.1rem;
+                  }
+                }
+
+                thead tr th,
+                tfoot tr th {
+                  font-family: 'Overlock SC', sans-serif;
+                  font-weight: bold;
+                }
+
+                thead tr th {
+                  border-bottom: 0;
+                }
+
+                tbody tr {
+                  transition: all .3s;
+
+                  &:hover {
+                    background-color: #fafafa;
+
+                    td.total-cell {
+                      background-color: #eee;
+                    }
+                  }
+
+                  td a {
+                    border-bottom: 1px solid transparent;
+                    color: #07e;
+                    text-decoration: none;
+                    transition: all .3s;
+
+                    &:focus,
+                    &:hover {
+                      border-color: $link-hover;
+                      color: $link-hover;
+                      text-decoration: none;
+                      text-shadow: none;
+                    }
+                  }
+                }
+
+                thead,
+                tfoot {
+                  background-color: #eee;
+                }
+
+                .total-cell {
+                  font-weight: bold;
+                  text-align: center;
+                }
+              }
+            }
+
+            .cut-list-h3 {
+              display: none;
+              font-family: "Overlock SC", serif;
+              margin: 5rem 0 0 -1.6rem;
+              text-align: left;
+            }
+
+            .cut-list {
+              margin: 1rem auto 0;
+              position: relative;
+
+              .cut-container:first-child {
+
+                .lum-size {
+                  margin-top: 0;
+                }
+              }
+
+              .lum-size {
+                display: inline-block;
+                font-size: 1.3rem;
+                margin: 3.5rem 0 0 2rem;
+                text-align: left;
+                width: 100%;
+              }
+
+              .lum-quant {
+                clear: left;
+                float: left;
+                font-size: 1.1rem;
+                margin: .6rem .2rem 0 -2.5rem;
+                padding: 0;
+                width: 5.5rem;
+              }
+
+              .cut-container {
+
+                .plank {
+                  background: url('http://i.imgur.com/rDEtqio.png');
+                  background-position: 0 0;
+                  background-size: cover;
+                  border: .1rem solid black;
+                  float: left;
+                  margin: .3rem 0 0 -1.3rem;
+
+                  .cut {
+                    border: .1rem solid black;
+                    float: left;
+                    height: 100%;
+                    margin: 0;
+                    width: 50%;
+
+                    p {
+                      font-size: 1.1rem;
+                      line-height: 1.2;
+                      margin: 0 auto;
+                    }
+
+                    .size4 {
+                      padding-top: .2rem;
+                    }
+
+                    .size6 {
+                      padding-top: .7rem;
+                    }
+
+                    .size8 {
+                      padding-top: 1.2rem;
+                    }
+
+                    .size12 {
+                      padding-top: 2.2rem;
+                    }
+                  }
+
+                  .scrap {
+                    background-color: rgba(100, 100, 100, .5);
+                  }
+                }
+
+                .plank-height-4 {
+                  height: 2rem;
+                }
+
+                .plank-height-6 {
+                  height: 3rem;
+                }
+
+                .plank-height-8 {
+                  height: 4rem;
+                }
+
+                .plank-height-12 {
+                  height: 6rem;
+                }
+
+                .lum-length {
+                  visibility: hidden;
+                }
+              }
+
+              .cut-container:last-child::after {
+                clear: both;
+                content: '*Angled cuts not depicted in the above diagrams';
+                display: block;
+                font-size: 1.2rem;
+                line-height: 4;
+                padding-bottom: 1rem;
+                text-align: left;
+              }
+            }
+          }
+
+          .math {
+            display: none;
+            margin: 2rem auto auto;
+            max-width: 60rem;
+            padding-bottom: 1rem;
+            text-align: left;
+
+            .heading {
+              @include heading;
+            }
+
+            a,
+            p {
+              font-size: 1.5rem;
+            }
+
+            a {
+              border-bottom: 1px solid transparent;
+              transition: all .3s;
+
+              &:hover {
+                border-color: $link-hover;
+                color: $link-hover;
+                text-decoration: none;
+              }
+            }
+
+            p {
+              padding-top: 1rem;
+            }
+          }
+
+          .back-to-top {
+
+            a {
+              background-color: white;
+              background-image: url('http://i.imgur.com/IloFGm4.png');
+              background-size: 100% 100%;
+              border: 5px solid white;
+              border-radius: 5px;
+              bottom: 6rem;
+              box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .4);
+              box-sizing: border-box;
+              display: none;
+              height: 5rem;
+              position: fixed;
+              right: 2rem;
+              width: 5rem;
+              z-index: 1;
+
+              &:focus,
+              &:hover {
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+
+      .footer {
+        background-color: #505050;
+        display: table-row;
+        font-weight: 300;
+        height: 1px;
+
+        .address {
+          margin: 0;
+
+          p {
+            color: white;
+            line-height: 5rem;
+            margin: 0;
+            width: auto;
+
+            a {
+              color: #0cf;
+
+              &:focus,
+              &:hover {
+                color: #0ef;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

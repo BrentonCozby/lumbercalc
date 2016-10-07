@@ -1,0 +1,193 @@
+@media print {
+
+  @page {
+    margin: 5rem;
+    orphans: 4;
+  }
+
+  .menu,
+  .title,
+  .about,
+  .math,
+  .lum-length,
+  .footer {
+    display: none;
+  }
+
+  .about,
+  .math {
+
+    .heading {
+      font-family: 'Overlock SC', serif;
+      font-size: 24px;
+    }
+
+    a[href]::after {
+      content: none !important;
+    }
+
+    p {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 16px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .calculator {
+
+    form {
+      margin-top: -2rem;
+
+      .preview-image,
+      .calc-button {
+        display: none;
+      }
+
+      .control-label,
+      select,
+      input {
+        font-size: 12pt;
+      }
+
+      .control-label {
+        font-family: 'Overlock SC', sans-serif;
+      }
+    }
+
+    table {
+
+      a[href]::after {
+        content: none !important;
+      }
+
+      tbody tr td,
+      tfoot tr td {
+        font-family: 'PT Sans', sans-serif;
+        font-size: 12pt;
+      }
+
+      thead tr th,
+      tfoot tr th {
+        font-family: 'Overlock SC', sans-serif;
+        font-size: 12pt;
+      }
+
+      .totals-row {
+        font-weight: bold;
+        text-align: center;
+
+        th {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .cut-list-h3 {
+    font-family: 'Overlock SC', sans-serif;
+    margin-top: 0;
+  }
+
+  .cut-list {
+    margin: 1rem auto 0;
+    position: relative;
+
+    .cut-container:first-child {
+
+      .lum-size {
+        margin-top: 0;
+      }
+    }
+
+    .lum-size {
+      display: inline-block;
+      font-size: 1.3rem;
+      margin: 3.5rem 0 0 3.2rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    .lum-quant {
+      clear: left;
+      float: left;
+      font-size: 1.1rem;
+      margin: .6rem 0 0;
+      padding: 0;
+      width: 5.5rem;
+    }
+
+    .cut-container {
+
+      .plank {
+        border: .1rem solid black;
+        float: left;
+        margin: .3rem 0 0 -2.3rem;
+
+        .cut {
+          border: .1rem solid black;
+          float: left;
+          height: 100%;
+          margin: 0;
+          width: 50%;
+
+          p {
+            font-size: 1.1rem;
+            line-height: 1.2;
+            margin: 0 auto;
+            text-align: center;
+          }
+
+          .size4 {
+            padding-top: .7rem;
+          }
+
+          .size6 {
+            padding-top: 1.5rem;
+          }
+
+          .size8 {
+            padding-top: 2.5rem;
+          }
+
+          .size12 {
+            padding-top: 3.7rem;
+          }
+        }
+      }
+
+      .plank-height-4 {
+        height: 3rem;
+      }
+
+      .plank-height-6 {
+        height: 4.5rem;
+      }
+
+      .plank-height-8 {
+        height: 6rem;
+      }
+
+      .plank-height-12 {
+        height: 9rem;
+      }
+
+      .lum-length {
+        visibility: hidden;
+      }
+    }
+
+    .cut-container:last-child::after {
+      clear: both;
+      content: '*Angled cuts not depicted in the above diagrams';
+      display: block;
+      font-size: 1.2rem;
+      line-height: 4;
+      padding-bottom: 1rem;
+      text-align: left;
+    }
+  }
+
+  .footer {
+    text-align: center;
+  }
+}

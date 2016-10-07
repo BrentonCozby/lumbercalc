@@ -1,0 +1,80 @@
+@media screen and (min-width: 992px) {
+
+  body {
+
+    .wrapper {
+
+      .main {
+
+        .main-wrapper {
+
+          .calculator {
+
+            form {
+
+              .schem-selected {
+                float: none;
+                margin: 0;
+              }
+
+              .schem-label {
+                float: none;
+                margin: 1rem .5rem 0 -2rem;
+              }
+
+              .quantity {
+                float: none;
+                margin: 0;
+              }
+
+              .quant-label {
+                float: none;
+                margin: 1rem .5rem 0 0;
+              }
+
+              .form-group {
+                margin-left: 5rem;
+                margin-top: 3rem;
+              }
+
+              .calc-button,
+              .form-group label {
+                font-size: 1.8rem;
+              }
+
+              .calc-button {
+                float: none;
+                margin: 1rem 0 0;
+              }
+
+              .preview-image {
+                margin-left: -6rem;
+                margin-top: -3.4rem;
+                transition: all .3s;
+              }
+            }
+
+            .table-div {
+              margin-top: 2.5rem;
+            }
+
+            .cut-list {
+
+              .cut-container {
+
+                .lum-length {
+                  float: left;
+                  font-size: 1.6rem;
+                  margin: 1.3rem 0 0 .4rem;
+                  padding: 0;
+                  text-align: left;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

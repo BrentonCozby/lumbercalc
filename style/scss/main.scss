@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+
+@import 'min320px';
+
+
+@media screen and (min-width: 370px) {
+  body .wrapper main .main-wrapper .calculator form .schem-selected {
+    width: 23rem;
+  }
+}
+
+@media screen and (min-width: 670px) {
+  body .wrapper main .main-wrapper .about,
+  body .wrapper main .main-wrapper .math {
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+}
+
+@import 'min768px';
+
+
+@import 'min992px';
