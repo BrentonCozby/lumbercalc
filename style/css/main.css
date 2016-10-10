@@ -557,28 +557,28 @@
       font-size: 1.4rem; } }
 
 @media screen and (min-width: 992px) {
-  body .wrapper .main .main-wrapper .calculator form .schem-selected {
+  body .wrapper .main .main-wrapper .calculator form fieldset .schem-selected {
     float: none;
     margin: 0; }
-  body .wrapper .main .main-wrapper .calculator form .schem-label {
+  body .wrapper .main .main-wrapper .calculator form fieldset .schem-label {
     float: none;
     margin: 1rem .5rem 0 -2rem; }
-  body .wrapper .main .main-wrapper .calculator form .quantity {
+  body .wrapper .main .main-wrapper .calculator form fieldset .quantity {
     float: none;
     margin: 0; }
-  body .wrapper .main .main-wrapper .calculator form .quant-label {
+  body .wrapper .main .main-wrapper .calculator form fieldset .quant-label {
     float: none;
     margin: 1rem .5rem 0 0; }
-  body .wrapper .main .main-wrapper .calculator form .form-group {
+  body .wrapper .main .main-wrapper .calculator form fieldset .form-group {
     margin-left: 5rem;
     margin-top: 3rem; }
-  body .wrapper .main .main-wrapper .calculator form .calc-button,
-  body .wrapper .main .main-wrapper .calculator form .form-group label {
+  body .wrapper .main .main-wrapper .calculator form fieldset .calc-button,
+  body .wrapper .main .main-wrapper .calculator form fieldset .form-group label {
     font-size: 1.8rem; }
-  body .wrapper .main .main-wrapper .calculator form .calc-button {
+  body .wrapper .main .main-wrapper .calculator form fieldset .calc-button {
     float: none;
     margin: 1rem 0 0; }
-  body .wrapper .main .main-wrapper .calculator form .preview-image {
+  body .wrapper .main .main-wrapper .calculator form fieldset .preview-image {
     margin-left: -6rem;
     margin-top: -3.4rem;
     transition: all .3s; }

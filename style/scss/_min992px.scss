@@ -12,45 +12,48 @@
 
             form {
 
-              .schem-selected {
-                float: none;
-                margin: 0;
-              }
+              fieldset {
 
-              .schem-label {
-                float: none;
-                margin: 1rem .5rem 0 -2rem;
-              }
+                .schem-selected {
+                  float: none;
+                  margin: 0;
+                }
 
-              .quantity {
-                float: none;
-                margin: 0;
-              }
+                .schem-label {
+                  float: none;
+                  margin: 1rem .5rem 0 -2rem;
+                }
 
-              .quant-label {
-                float: none;
-                margin: 1rem .5rem 0 0;
-              }
+                .quantity {
+                  float: none;
+                  margin: 0;
+                }
 
-              .form-group {
-                margin-left: 5rem;
-                margin-top: 3rem;
-              }
+                .quant-label {
+                  float: none;
+                  margin: 1rem .5rem 0 0;
+                }
 
-              .calc-button,
-              .form-group label {
-                font-size: 1.8rem;
-              }
+                .form-group {
+                  margin-left: 5rem;
+                  margin-top: 3rem;
+                }
 
-              .calc-button {
-                float: none;
-                margin: 1rem 0 0;
-              }
+                .calc-button,
+                .form-group label {
+                  font-size: 1.8rem;
+                }
 
-              .preview-image {
-                margin-left: -6rem;
-                margin-top: -3.4rem;
-                transition: all .3s;
+                .calc-button {
+                  float: none;
+                  margin: 1rem 0 0;
+                }
+
+                .preview-image {
+                  margin-left: -6rem;
+                  margin-top: -3.4rem;
+                  transition: all .3s;
+                }
               }
             }
 
