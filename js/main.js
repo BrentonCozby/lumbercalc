@@ -194,7 +194,7 @@
                 price_12: 15.27
             }
         };
-        // Set schematic preview image to blank (until user selects a schematic)
+        // Set preview-image to blank by default
         document.getElementById('preview-image').src = "http://i.imgur.com/9n8a24l.png";
         // Changes preview image when different schematic is selected
         $scope.schem_change = function(schem_selected) {
@@ -663,7 +663,7 @@
             // Nav controls
             var title = $('header nav p span');
 
-            function navControlsHandler(thisNavBtn, otherPages, thisPage, otherNavBtns, titleCursorSetting) {
+            function navControlsHandler(thisNavBtn, otherPages, thisPage, otherNavBtns, titleCursorSetting, pageContent) {
                 thisNavBtn.click(function() {
                     if (!thisNavBtn.hasClass("active")) {
                         hide_menu();
