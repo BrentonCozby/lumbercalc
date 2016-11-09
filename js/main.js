@@ -1,4 +1,4 @@
-!function() {
+! function() {
     "use strict";
 
     var app = angular.module("myApp", []);
@@ -102,11 +102,23 @@
                 new Cut(21, 12, "size_2x4", 0, 0),
                 new Cut(17, 8, "size_2x4", 0, 0),
                 new Cut(14, 4, "size_2x4", 0, 0),
-                new Cut(24, 8, "size_2x4", 45, 45),
+                new Cut(24, 8, "size_2x4", 45, -45),
                 new Cut(96, 1, "size_2x4", 0, 0),
                 new Cut(93, 1, "size_2x4", 0, 0),
                 new Cut(45, 5, "size_2x4", 0, 0),
                 new Cut(21, 14, "size_2x4", 0, 0)
+            ],
+            special_lumber: false
+        }, {
+            name: "Garden Box (24\" x 6')",
+            cut_quant: 5,
+            image: "http://i.imgur.com/NzpKd0M.png",
+            cuts: [
+                new Cut(72, 2, "size_2x4", 45, -45),
+                new Cut(70.5, 12, "size_2x4", 0, 0),
+                new Cut(24, 2, "size_2x4", 45, -45),
+                new Cut(22.5, 12, "size_2x4", 0, 0),
+                new Cut(21, 4, "size_2x4", 0, 0)
             ],
             special_lumber: false
         }, {
@@ -129,6 +141,42 @@
                 new Cut(63, 1, "size_2x4", 0, 0)
             ],
             special_lumber: false
+        }, {
+            name: "Picnic Table 3 Leg",
+            cut_quant: 5,
+            image: "http://i.imgur.com/B0H0jBA.png",
+            cuts: [
+                new Cut(66, 3, "size_2x6", 38, -38),
+                new Cut(39.5, 6, "size_2x6", 38, 38),
+                new Cut(34.25, 5, "size_2x4", 38, -38),
+                new Cut(32, 2, "size_2x4", 26, 26),
+                new Cut(96, 10, "size_2x6", 0, 0)
+            ],
+            special_lumber: false
+        },
+        {
+            name: "Toddler Picnic Table",
+            cut_quant: 6,
+            image: "http://i.imgur.com/1BzZFwm.png",
+            cuts: [
+                new Cut(64, 2, "size_2x6", 45, 135),
+                new Cut(60, 9, "size_2x6", 0, 0),
+                new Cut(45, 1, "size_2x6", 0, 0),
+                new Cut(28, 4, "size_2x6", 38, 38),
+                new Cut(29.5, 2, "size_2x4", 45, 135),
+                new Cut(29.5, 1, "size_2x4", 0, 0)
+            ],
+            special_lumber: false
+        },
+        {
+            name: "Dolly",
+            cut_quant: 2,
+            image: "http://i.imgur.com/pcKJXOo.png",
+            cuts: [
+                new Cut(24, 4, "size_2x4", 0, 0),
+                new Cut(60, 2, "size_2x4", 0, 0)
+            ],
+            special_lumber: true
         }];
         // Lumber sizes for the data function which is used by the table_row_maker function
         $scope.lumberSizes = [
