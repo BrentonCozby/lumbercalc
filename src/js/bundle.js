@@ -1,12 +1,14 @@
-! function() {
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
+!function () {
     "use strict";
 
     var app = angular.module("myApp", []);
-    app.controller('schemController', ['$scope', function($scope) {
+    app.controller('schemController', ['$scope', function ($scope) {
         // Polyfill the "includes" method for FireFox and IE
         if (!String.prototype.includes) {
-            String.prototype.includes = function(search, start) {
-                'use strict';
+            String.prototype.includes = function (search, start) {
                 if (typeof start !== 'number') {
                     start = 0;
                 }
@@ -18,7 +20,7 @@
             };
         }
         // Constructor for schematics cuts
-        var Cut = (function() {
+        var Cut = function () {
             function Cut(piece_length, piece_num, lumber_size, angle_right, angle_left) {
                 this.piece_length = piece_length;
                 this.piece_num = piece_num;
@@ -27,225 +29,278 @@
                 this.angle_right = angle_right;
             }
             return Cut;
-        }());
+        }();
         // Database of schematics' measurements and properties
         $scope.schematics = [{
             name: "Backed Bench",
             cut_quant: 4,
             image: "http://i.imgur.com/ZGL2MjL.png",
-            cuts: [
-                new Cut(60, 7, "size_2x6", 0, 0),
-                new Cut(17, 8, "size_2x6", 0, 0),
-                new Cut(35, 2, "size_2x6", 10, 0),
-                new Cut(72, 2, "size_2x6", 0, 0)
-            ],
-            special_lumber: false
+            cuts: [new Cut(60, 7, "size_2x6", 0, 0), new Cut(17, 8, "size_2x6", 0, 0), new Cut(35, 2, "size_2x6", 10, 0), new Cut(72, 2, "size_2x6", 0, 0)],
+            special_parts: false
         }, {
             name: "Backed Bench with Armrest",
             cut_quant: 7,
             image: "http://i.imgur.com/ufMtPF3.png",
-            cuts: [
-                new Cut(72, 8, "size_2x4", 0, 0),
-                new Cut(60, 1, "size_2x4", 0, 0),
-                new Cut(36.5, 2, "size_2x4", 0, 0),
-                new Cut(21, 2, "size_2x4", 0, 0),
-                new Cut(19.5, 4, "size_2x4", 0, 0),
-                new Cut(16.5, 6, "size_2x4", 0, 0),
-                new Cut(14, 2, "size_2x4", 0, 0)
-            ],
-            special_lumber: false
+            cuts: [new Cut(72, 8, "size_2x4", 0, 0), new Cut(60, 1, "size_2x4", 0, 0), new Cut(36.5, 2, "size_2x4", 0, 0), new Cut(21, 2, "size_2x4", 0, 0), new Cut(19.5, 4, "size_2x4", 0, 0), new Cut(16.5, 6, "size_2x4", 0, 0), new Cut(14, 2, "size_2x4", 0, 0)],
+            special_parts: false
         }, {
             name: "Concreted Simple Bench",
             cut_quant: 3,
             image: "http://i.imgur.com/ilZCQuO.png",
             cuts: [
-                // Alternate code that doesn't use the "Cut" constructor
-                {
-                    piece_length: 72,
-                    piece_num: 1,
-                    lumber_size: "size_2x12",
-                    angle_left: 0,
-                    angle_right: 0
-                }, {
-                    piece_length: 36,
-                    piece_num: 3,
-                    lumber_size: "size_4x4",
-                    angle_left: 0,
-                    angle_right: 0
-                }, {
-                    piece_length: 66,
-                    piece_num: 2,
-                    lumber_size: "size_2x4",
-                    angle_left: 0,
-                    angle_right: 0
-                }
-            ],
-            special_lumber: false
+            // Alternate code that doesn't use the "Cut" constructor
+            {
+                piece_length: 72,
+                piece_num: 1,
+                lumber_size: "size_2x12",
+                angle_left: 0,
+                angle_right: 0
+            }, {
+                piece_length: 36,
+                piece_num: 3,
+                lumber_size: "size_4x4",
+                angle_left: 0,
+                angle_right: 0
+            }, {
+                piece_length: 66,
+                piece_num: 2,
+                lumber_size: "size_2x4",
+                angle_left: 0,
+                angle_right: 0
+            }],
+            special_parts: false
         }, {
-            name: "Picnic Table 2 Legs",
+            name: "Backless Bench (6')",
             cut_quant: 5,
-            image: "http://i.imgur.com/pO3P9gm.png",
-            cuts: [
-                new Cut(66, 2, "size_2x6", 38, 38),
-                new Cut(39.5, 4, "size_2x6", 38, -38),
-                new Cut(34.25, 4, "size_2x4", 38, 38),
-                new Cut(32, 2, "size_2x4", 26, -26),
-                new Cut(96, 10, "size_2x6", 0, 0)
-            ],
-            special_lumber: false
+            image: "http://i.imgur.com/TXCpAaS.png",
+            cuts: [new Cut(72, 3, "size_2x6", 0, 0), new Cut(17, 4, "size_2x6", 0, 0), new Cut(8.5, 4, "size_2x6", 0, 0), new Cut(21, 4, "size_2x4", 45, -45), new Cut(15.5, 2, "size_2x4", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Backless Bench",
+            cut_quant: 2,
+            image: "http://i.imgur.com/yKzoDfO.png",
+            cuts: [new Cut(60, 7, "size_2x6", 0, 0), new Cut(17, 8, "size_2x6", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Children's Bench ",
+            cut_quant: 4,
+            image: "http://i.imgur.com/PQfP7Su.png",
+            cuts: [new Cut(72, 2, "size_2x4", 0, 0), new Cut(60, 7, "size_2x", 0, 0), new Cut(10.75, 9, "size_2x4", 0, 0), new Cut(22, 2, "size_2x4", 10, 0)],
+            special_parts: false
+        }, {
+            name: "Children's Mural Bench ",
+            cut_quant: 4,
+            image: "http://i.imgur.com/8l6mEIv.png",
+            cuts: [new Cut(60, 7, "size_2x4", 0, 0), new Cut(10.75, 9, "size_2x4", 0, 0), new Cut(22, 2, "size_2x4", 10, 0), new Cut(72, 1, "size_2x8", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Mural Bench",
+            cut_quant: 4,
+            image: "http://i.imgur.com/M23sCpo.png",
+            cuts: [new Cut(60, 7, "size_2x6", 0, 0), new Cut(17, 8, "size_2x6", 0, 0), new Cut(35, 2, "size_2x6", 10, 0), new Cut(72, 1, "size_2x12", 0, 0)],
+            special_parts: false
         }, {
             name: "Double Planter Bench",
             cut_quant: 9,
             image: "http://i.imgur.com/G3Icibn.png",
-            cuts: [
-                new Cut(22.5, 26, "size_2x4", 0, 0),
-                new Cut(21, 12, "size_2x4", 0, 0),
-                new Cut(17, 8, "size_2x4", 0, 0),
-                new Cut(14, 4, "size_2x4", 0, 0),
-                new Cut(24, 8, "size_2x4", 45, -45),
-                new Cut(96, 1, "size_2x4", 0, 0),
-                new Cut(93, 1, "size_2x4", 0, 0),
-                new Cut(45, 5, "size_2x4", 0, 0),
-                new Cut(21, 14, "size_2x4", 0, 0)
-            ],
-            special_lumber: false
+            cuts: [new Cut(22.5, 26, "size_2x4", 0, 0), new Cut(21, 12, "size_2x4", 0, 0), new Cut(17, 8, "size_2x4", 0, 0), new Cut(14, 4, "size_2x4", 0, 0), new Cut(24, 8, "size_2x4", 45, -45), new Cut(96, 1, "size_2x4", 0, 0), new Cut(93, 1, "size_2x4", 0, 0), new Cut(45, 5, "size_2x4", 0, 0), new Cut(21, 14, "size_2x4", 0, 0)],
+            special_parts: false
         }, {
-            name: "Garden Box (24\" x 6')",
+            name: "Picnic Table 2 Legs",
             cut_quant: 5,
-            image: "http://i.imgur.com/NzpKd0M.png",
-            cuts: [
-                new Cut(72, 2, "size_2x4", 45, -45),
-                new Cut(70.5, 12, "size_2x4", 0, 0),
-                new Cut(24, 2, "size_2x4", 45, -45),
-                new Cut(22.5, 12, "size_2x4", 0, 0),
-                new Cut(21, 4, "size_2x4", 0, 0)
-            ],
-            special_lumber: false
-        }, {
-            name: "Planter Box",
-            cut_quant: 2,
-            image: "http://i.imgur.com/ZMcbcD6.png",
-            cuts: [
-                new Cut(96, 4, "size_4x4", 0, 0),
-                new Cut(48, 4, "size_4x4", 0, 0)
-            ],
-            special_lumber: false
-        }, {
-            name: "Bike Rack",
-            cut_quant: 4,
-            image: "http://i.imgur.com/rzfEgT9.png",
-            cuts: [
-                new Cut(48, 2, "size_4x4", 0, 0),
-                new Cut(34.5, 8, "size_2x4", 0, 0),
-                new Cut(56, 1, "size_2x4", 0, 0),
-                new Cut(63, 1, "size_2x4", 0, 0)
-            ],
-            special_lumber: false
+            image: "http://i.imgur.com/pO3P9gm.png",
+            cuts: [new Cut(66, 2, "size_2x6", 38, 38), new Cut(39.5, 4, "size_2x6", 38, -38), new Cut(34.25, 4, "size_2x4", 38, 38), new Cut(32, 2, "size_2x4", 26, -26), new Cut(96, 10, "size_2x6", 0, 0)],
+            special_parts: false
         }, {
             name: "Picnic Table 3 Leg",
             cut_quant: 5,
             image: "http://i.imgur.com/B0H0jBA.png",
-            cuts: [
-                new Cut(66, 3, "size_2x6", 38, -38),
-                new Cut(39.5, 6, "size_2x6", 38, 38),
-                new Cut(34.25, 5, "size_2x4", 38, -38),
-                new Cut(32, 2, "size_2x4", 26, 26),
-                new Cut(96, 10, "size_2x6", 0, 0)
-            ],
-            special_lumber: false
-        },
-        {
+            cuts: [new Cut(66, 3, "size_2x6", 38, -38), new Cut(39.5, 6, "size_2x6", 38, 38), new Cut(34.25, 5, "size_2x4", 38, -38), new Cut(32, 2, "size_2x4", 26, 26), new Cut(96, 10, "size_2x6", 0, 0)],
+            special_parts: false
+        }, {
             name: "Toddler Picnic Table",
             cut_quant: 6,
             image: "http://i.imgur.com/1BzZFwm.png",
-            cuts: [
-                new Cut(64, 2, "size_2x6", 45, 135),
-                new Cut(60, 9, "size_2x6", 0, 0),
-                new Cut(45, 1, "size_2x6", 0, 0),
-                new Cut(28, 4, "size_2x6", 38, 38),
-                new Cut(29.5, 2, "size_2x4", 45, 135),
-                new Cut(29.5, 1, "size_2x4", 0, 0)
-            ],
-            special_lumber: false
-        },
-        {
+            cuts: [new Cut(64, 2, "size_2x6", 45, 135), new Cut(60, 9, "size_2x6", 0, 0), new Cut(45, 1, "size_2x6", 0, 0), new Cut(28, 4, "size_2x6", 38, 38), new Cut(29.5, 2, "size_2x4", 45, 135), new Cut(29.5, 1, "size_2x4", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Bike Rack",
+            cut_quant: 4,
+            image: "http://i.imgur.com/rzfEgT9.png",
+            cuts: [new Cut(48, 2, "size_4x4", 0, 0), new Cut(34.5, 8, "size_2x4", 0, 0), new Cut(56, 1, "size_2x4", 0, 0), new Cut(63, 1, "size_2x4", 0, 0)],
+            special_parts: false
+        }, {
             name: "Dolly",
             cut_quant: 2,
             image: "http://i.imgur.com/pcKJXOo.png",
-            cuts: [
-                new Cut(24, 4, "size_2x4", 0, 0),
-                new Cut(60, 2, "size_2x4", 0, 0)
-            ],
-            special_lumber: true
+            cuts: [new Cut(24, 4, "size_2x4", 0, 0), new Cut(60, 2, "size_2x4", 0, 0)],
+            special_parts: true
+        }, {
+            name: "Planter Box",
+            cut_quant: 2,
+            image: "http://i.imgur.com/ZMcbcD6.png",
+            cuts: [new Cut(96, 4, "size_4x4", 0, 0), new Cut(48, 4, "size_4x4", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Two Tier Planter",
+            cut_quant: 3,
+            image: "http://i.imgur.com/Vv0fUw1.png",
+            cuts: [new Cut(96, 10, "size_4x4", 0, 0), new Cut(92.5, 2, "size_4x4", 0, 0), new Cut(48, 8, "size_4x4", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Garden Bed (3'x4')",
+            cut_quant: 5,
+            image: "http://i.imgur.com/s1QJbEk.png",
+            cuts: [new Cut(36, 2, "size_2x6", 45, -45), new Cut(48, 2, "size_2x6", 45, -45), new Cut(34.5, 4, "size_2x8", 0, 0), new Cut(46.5, 4, "size_2x8", 0, 0), new Cut(15, 4, "size_4x4", 0, 0)],
+            special_parts: false
+        }, {
+            name: "Garden Bed (4'x8')",
+            cut_quant: 5,
+            image: "http://i.imgur.com/ojZ5gSQ.png",
+            cuts: [new Cut(96, 2, "size_2x6", 45, -45), new Cut(48, 2, "size_2x6", 45, -45), new Cut(94.5, 4, "size_2x8", 0, 0), new Cut(46.5, 4, "size_2x8", 0, 0), new Cut(15, 6, "size_4x4", 0, 0)],
+            special_parts: false
         }];
+
+        // , {
+        //     name: "Garden Box (24\" x 6')",
+        //     cut_quant: 5,
+        //     image: "http://i.imgur.com/NzpKd0M.png",
+        //     cuts: [
+        //         new Cut(72, 2, "size_2x4", 45, -45),
+        //         new Cut(70.5, 12, "size_2x4", 0, 0),
+        //         new Cut(24, 2, "size_2x4", 45, -45),
+        //         new Cut(22.5, 12, "size_2x4", 0, 0),
+        //         new Cut(21, 4, "size_2x4", 0, 0)
+        //     ],
+        //     special_parts: false
+        // }, {
+        //     name: "Single Planter Bench",
+        //     cut_quant: 11,
+        //     image: "http://i.imgur.com/TjcO04e.png",
+        //     cuts: [
+        //         new Cut(73.5, 1, "size_2x4", 0, 0),
+        //         new Cut(72, 1, "size_2x4", 0, 0),
+        //         new Cut(46, 2, "size_2x4", 0, 0),
+        //         new Cut(24, 4, "size_2x4", 45, -45),
+        //         new Cut(24, 3, "size_2x4", 0, 0),
+        //         new Cut(22.5, 13, "size_2x4", 0, 0),
+        //         new Cut(21, 23, "size_2x4", 0, 0),
+        //         new Cut(17, 4, "size_2x4", 0, 0),
+        //         new Cut(15, 2, "size_2x4", 0, 0),
+        //         new Cut(14, 2, "size_2x4", 0, 0),
+        //         new Cut(13.5, 2, "size_2x4", 0, 0)
+        //     ],
+        //     special_parts: false
+        // }, {
+        //     name: "Chin Up Bars",
+        //     cut_quant: 2,
+        //     image: "http://i.imgur.com/6LWk1NR.png",
+        //     cuts: [
+        //         new Cut(96, 2, "size_4x4", 0, 0),
+        //         new Cut(72, 1, "size_4x4", 0, 0)
+        //     ],
+        //     special_parts: true
+        // }, {
+        //     name: "Push Up Bars",
+        //     cut_quant: 1,
+        //     image: "http://i.imgur.com/fEtV5Bo.png",
+        //     cuts: [
+        //         new Cut(24, 2, "size_4x4", 0, 0)
+        //     ],
+        //     special_parts: true
+        // }, {
+        //     name: "Sit Up Bench",
+        //     cut_quant: 2,
+        //     image: "http://i.imgur.com/IMdFcCZ.png",
+        //     cuts: [
+        //         new Cut(96, 10, "size_4x4", 0, 0),
+        //         new Cut(48, 4, "size_4x4", 0, 0)
+        //     ],
+        //     special_parts: true
+        // }, {
+        //     name: "Victory Garden Bed (4'x8')",
+        //     cut_quant: 6,
+        //     image: "http://i.imgur.com/sBxZ7VD.png",
+        //     cuts: [
+        //         new Cut(46, 5, "size_2x4", 0, 0),
+        //         new Cut(48, 2, "size_2x6", 45, -45),
+        //         new Cut(96, 2, "size_2x6", 45, -45),
+        //         new Cut(46.5, 4, "size_2x8", 0, 0),
+        //         new Cut(94.5, 4, "size_2x8", 0, 0),
+        //         new Cut(15, 6, "size_4x4", 0, 0)
+        //     ],
+        //     special_parts: false
+        // }, {
+        //     name: "Podium",
+        //     cut_quant: 5,
+        //     image: "http://i.imgur.com/1mPKK82.png",
+        //     cuts: [
+        //         new Cut(18, 1, "size_2x12", 0, 0),
+        //         new Cut(4, 1, "size_2x12", 0, 0),
+        //         new Cut(48, 1, "size_4x4", 45, 0),
+        //         new Cut(10.5, 2, "size_2x4", 0, 0),
+        //         new Cut(3.5, 2, "size_2x4", 0, 0)
+        //     ],
+        //     special_parts: false
+        // }, {
+        //     name: "Outdoor Classroom Stage",
+        //     cut_quant: 4,
+        //     image: "http://i.imgur.com/sSlTXSs.png",
+        //     cuts: [
+        //         new Cut(96, 2, "size_2x6", 0, 0),
+        //         new Cut(93, 8, "size_2x6", 0, 0),
+        //         new Cut(96, 17, "size_2x6", 0, 0),
+        //         new Cut(27, 8, "size_4x4", 0, 0)
+        //     ],
+        //     special_parts: false
+        // },  {
+        //     name: "Outdoor Classroom Ramp",
+        //     cut_quant: 3,
+        //     image: "http://i.imgur.com/jjIoS9u.png",
+        //     cuts: [
+        //         new Cut(48, 2, "size_2x4", 0, 0),
+        //         new Cut(93, 4, "size_2x4", 0, 0),
+        //         new Cut(48, 18, "size_2x6", 0, 0)
+        //     ],
+        //     special_parts: false
+        // }
+
         // Lumber sizes for the data function which is used by the table_row_maker function
-        $scope.lumberSizes = [
-            "2\" x 4\" x 8\'",
-            "2\" x 6\" x 8\'",
-            "2\" x 8\" x 8\'",
-            "2\" x 12\" x 8\'",
-            "4\" x 4\" x 8\'",
-            "2\" x 4\" x 10\'",
-            "2\" x 6\" x 10\'",
-            "2\" x 8\" x 10\'",
-            "2\" x 12\" x 10\'",
-            "4\" x 4\" x 10\'",
-            "2\" x 4\" x 12\'",
-            "2\" x 6\" x 12\'",
-            "2\" x 8\" x 12\'",
-            "2\" x 12\" x 12\'",
-            "4\" x 4\" x 12\'"
-        ];
+        $scope.lumberSizes = ["2\" x 4\" x 8\'", "2\" x 6\" x 8\'", "2\" x 8\" x 8\'", "2\" x 12\" x 8\'", "4\" x 4\" x 8\'", "2\" x 4\" x 10\'", "2\" x 6\" x 10\'", "2\" x 8\" x 10\'", "2\" x 12\" x 10\'", "4\" x 4\" x 10\'", "2\" x 4\" x 12\'", "2\" x 6\" x 12\'", "2\" x 8\" x 12\'", "2\" x 12\" x 12\'", "4\" x 4\" x 12\'"];
         // Home Depot links; this array needs to match up with the $scope.lumberSizes array
-        $scope.HomeDepotLinks = [
-            "http://www.homedepot.com/p/WeatherShield-2-in-x-4-in-x-8-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-020408P/206935184",
-            "http://www.homedepot.com/p/WeatherShield-2-in-x-6-in-x-8-ft-2-Prime-Pressure-Treated-Lumber-2311253/100018427",
-            "http://www.homedepot.com/p/2-in-x-8-in-x-8-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-107523/206937455",
-            "http://www.homedepot.com/p/2-in-x-12-in-x-8-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-112851/206964340",
-            "http://www.homedepot.com/p/Pressure-Treated-Timber-2-Southern-Yellow-Pine-Common-4-in-x-4-in-x-8-ft-Actual-3-56-in-x-3-56-in-x-96-in-194354/205220341",
-            "http://www.homedepot.com/p/WeatherShield-2-in-x-4-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253920/206967803",
-            "http://www.homedepot.com/p/WeatherShield-2-in-x-6-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253921/206967800",
-            "http://www.homedepot.com/p/2-in-x-8-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-107523/206937440",
-            "http://www.homedepot.com/p/2-in-x-12-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-112851/206964329",
-            "http://www.homedepot.com/p/4-in-x-4-in-x-10-ft-2-Pressure-Treated-Timber-4220254/100025396",
-            "http://www.homedepot.com/p/WeatherShield-2-in-x-4-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253920/206967813",
-            "http://www.homedepot.com/p/WeatherShield-2-in-x-6-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253921/206967802",
-            "http://www.homedepot.com/p/2-in-x-8-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-107523/206937453",
-            "http://www.homedepot.com/p/2-in-x-12-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-112851/206964330",
-            "http://www.homedepot.com/p/4-in-x-4-in-x-12-ft-2-Pressure-Treated-Timber-4230254/100073070"
-        ];
+        $scope.HomeDepotLinks = ["http://www.homedepot.com/p/2-in-x-4-in-x-8-ft-2-Ground-Contact-Pressure-Treated-Lumber-106147/206970948", "http://www.homedepot.com/p/WeatherShield-2-in-x-6-in-x-8-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253921/206967808", "http://www.homedepot.com/p/2-in-x-8-in-x-8-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-107523/206937455", "http://www.homedepot.com/p/2-in-x-12-in-x-8-ft-2-Prime-or-Better-Ground-Contact-Pressure-Treated-Lumber-112851/206964340", "http://www.homedepot.com/p/Pressure-Treated-Timber-2-Southern-Yellow-Pine-Common-4-in-x-4-in-x-8-ft-Actual-3-56-in-x-3-56-in-x-96-in-194354/205220341", "http://www.homedepot.com/p/WeatherShield-2-in-x-4-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253920/206967803", "http://www.homedepot.com/p/WeatherShield-2-in-x-6-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253921/206967800", "http://www.homedepot.com/p/2-in-x-8-in-x-10-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-107523/206937440", "http://www.homedepot.com/p/2-in-x-12-in-x-10-ft-2-Prime-or-Better-Ground-Contact-Pressure-Treated-Lumber-112851/206964329", "http://www.homedepot.com/p/4-in-x-4-in-x-10-ft-2-Pressure-Treated-Timber-4220254/100025396", "http://www.homedepot.com/p/WeatherShield-2-in-x-4-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253920/206967813", "http://www.homedepot.com/p/WeatherShield-2-in-x-6-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-253921/206967802", "http://www.homedepot.com/p/2-in-x-8-in-x-12-ft-2-Prime-Ground-Contact-Pressure-Treated-Lumber-107523/206937453", "http://www.homedepot.com/p/2-in-x-12-in-x-12-ft-2-Prime-or-Better-Ground-Contact-Pressure-Treated-Lumber-112851/206964330", "http://www.homedepot.com/p/4-in-x-4-in-x-12-ft-2-Pressure-Treated-Timber-4230254/100073070"];
         // Lumber prices. Ideally would use Home Depot API to import live prices
         $scope.lumberPrices = {
             size_2x4: {
-                price_8: 4.57,
-                price_10: 5.67,
-                price_12: 6.97
+                price_8: 3.27,
+                price_10: 5.47,
+                price_12: 6.87
             },
             size_2x6: {
-                price_8: 5.97,
-                price_10: 7.47,
-                price_12: 8.87
+                price_8: 6.57,
+                price_10: 7.97,
+                price_12: 9.37
             },
             size_2x8: {
-                price_8: 7.97,
-                price_10: 9.87,
-                price_12: 11.67
+                price_8: 8.57,
+                price_10: 10.27,
+                price_12: 12.57
             },
             size_2x12: {
-                price_8: 18.97,
-                price_10: 22.97,
-                price_12: 28.57
+                price_8: 17.27,
+                price_10: 20.57,
+                price_12: 24.57
             },
             size_4x4: {
-                price_8: 8.67,
-                price_10: 12.77,
-                price_12: 15.27
+                price_8: 6.97,
+                price_10: 11.87,
+                price_12: 13.97
             }
         };
         // Set preview-image to blank by default
         document.getElementById('preview-image').src = "http://i.imgur.com/9n8a24l.png";
         // Changes preview image when different schematic is selected
-        $scope.schem_change = function(schem_selected) {
+        $scope.schem_change = function (schem_selected) {
             var numberOfSchematics = $scope.schematics.length;
             var schematics = $scope.schematics;
             var screen_width = window.innerWidth;
@@ -280,19 +335,19 @@
             }
 
             function keepBig() {
-                preview.mouseenter(function() {
+                preview.mouseenter(function () {
                     clickBig();
                 });
-                preview.mouseleave(function() {
+                preview.mouseleave(function () {
                     clickBig();
                 });
             }
 
             function hoverEnlarge() {
-                preview.mouseenter(function() {
+                preview.mouseenter(function () {
                     hoverBig();
                 });
-                preview.mouseleave(function() {
+                preview.mouseleave(function () {
                     small();
                 });
             }
@@ -372,9 +427,9 @@
         function theCalculator(schem, quant) {
             // Calculate total quantity, minimum cost, and minimum scrap for each lumber size
             function mathHeavyStuff(sizeFeet, sizeInches, i) {
-                $scope["lum_quant_" + sizeFeet].push((Math.ceil((schem.cuts[i].piece_num * quant) / Math.floor(sizeInches / schem.cuts[i].piece_length))));
-                $scope["total_cost_" + sizeFeet].push(Number(($scope["lum_quant_" + sizeFeet][i] * $scope.lumberPrices[schem.cuts[i].lumber_size]["price_" + sizeFeet])));
-                $scope["total_scrap_" + sizeFeet].push(($scope["lum_quant_" + sizeFeet][i] * sizeInches) - (schem.cuts[i].piece_num * quant * schem.cuts[i].piece_length));
+                $scope["lum_quant_" + sizeFeet].push(Math.ceil(schem.cuts[i].piece_num * quant / Math.floor(sizeInches / schem.cuts[i].piece_length)));
+                $scope["total_cost_" + sizeFeet].push(Number($scope["lum_quant_" + sizeFeet][i] * $scope.lumberPrices[schem.cuts[i].lumber_size]["price_" + sizeFeet]));
+                $scope["total_scrap_" + sizeFeet].push($scope["lum_quant_" + sizeFeet][i] * sizeInches - schem.cuts[i].piece_num * quant * schem.cuts[i].piece_length);
             }
             for (var i = 0; i < schem.cuts.length; i++) {
                 mathHeavyStuff(8, 96, i);
@@ -383,12 +438,7 @@
                 // Optimize by cost; selects the lumber sizes (8, 10, or 12 ft) with lowest cost
                 for (var j = 8; j <= 12; j += 2) {
                     if ($scope["total_cost_" + j][i] == Math.min($scope.total_cost_8[i], $scope.total_cost_10[i], $scope.total_cost_12[i])) {
-                        $scope.summary_rows[i] = [
-                            schem.cuts[i].lumber_size.replace(/size_(\d{1,})x(\d{1,})/, '$1" x $2"') + " x " + j + "'",
-                            $scope["lum_quant_" + j][i],
-                            $scope["total_cost_" + j][i],
-                            $scope["total_scrap_" + j][i]
-                        ];
+                        $scope.summary_rows[i] = [schem.cuts[i].lumber_size.replace(/size_(\d{1,})x(\d{1,})/, '$1" x $2"') + " x " + j + "'", $scope["lum_quant_" + j][i], $scope["total_cost_" + j][i], $scope["total_scrap_" + j][i]];
                     }
                 }
             }
@@ -455,26 +505,26 @@
             }
             // Shift
             value = value.toString().split('e');
-            value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+            value = Math[type](+(value[0] + 'e' + (value[1] ? +value[1] - exp : -exp)));
             // Shift back
             value = value.toString().split('e');
-            return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+            return +(value[0] + 'e' + (value[1] ? +value[1] + exp : exp));
         }
         // Decimal round
         if (!Math.round10) {
-            Math.round10 = function(value, exp) {
+            Math.round10 = function (value, exp) {
                 return decimalAdjust('round', value, exp);
             };
         }
         // Decimal floor
         if (!Math.floor10) {
-            Math.floor10 = function(value, exp) {
+            Math.floor10 = function (value, exp) {
                 return decimalAdjust('floor', value, exp);
             };
         }
         // Decimal ceil
         if (!Math.ceil10) {
-            Math.ceil10 = function(value, exp) {
+            Math.ceil10 = function (value, exp) {
                 return decimalAdjust('ceil', value, exp);
             };
         }
@@ -532,7 +582,7 @@
         }
 
         function reset_table() {
-            $('#summary').empty(this);
+            $('#summary').html('');
             // Add table headings
             $('#summary').append('<thead><tr><th style="text-align: center;">Size</th><th style="text-align: center;">Quantity</th><th style="text-align: center;">Total Cost</th><th style="text-align: center;">Total Scrap</th></tr></thead>');
         }
@@ -578,7 +628,7 @@
             }
 
             function setCutWidth(i, widthIN) {
-                cut_width = (cuts[i].piece_length / widthIN) * 100;
+                cut_width = cuts[i].piece_length / widthIN * 100;
                 pieces_per_plank = Math.floor(widthIN / cuts[i].piece_length);
             }
 
@@ -619,7 +669,7 @@
                     $("#" + current_plank_id).append(cut);
                 }
                 // Display scrap
-                scrap_width = 100 - (pieces_per_plank * cut_width);
+                scrap_width = 100 - pieces_per_plank * cut_width;
                 if (scrap_width > 0.1) {
                     scrap = '<div class="cut scrap" id="' + current_scrap_id + '"style="width: ' + scrap_width + '%"></p>' + '</div>';
                     $("#" + current_plank_id).append(scrap);
@@ -637,7 +687,7 @@
             }
         }
         // Calls all the above functions when the "Calculate" button is clicked
-        $scope.btn_press = function(quantity, schem_selected) {
+        $scope.btn_press = function (quantity, schem_selected) {
             if ($scope.quantity === undefined || $scope.schem_selected === undefined) {
                 document.getElementById('validate').innerHTML = "Please fill out all fields";
             } else {
@@ -665,14 +715,14 @@
                     formatter(datasets);
                     // Creates HTML to display data in table
                     table_maker(datasets);
-                    $("#table-div").slideDown(function() {
+                    $("#table-div").slideDown(function () {
                         $('#cut_list, #cut_list_h3').slideDown();
                     });
                 });
             }
         };
     }]);
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Menu controls
         (function setMenuControls() {
             var menu_items = $('#menu-items');
@@ -702,23 +752,23 @@
                 $("#overlay").fadeOut(200);
                 $("#overlay").css("z-index", "1");
             }
-            $("#menu-button button").click(function() {
+            $("#menu-button button").click(function () {
                 show_menu();
             });
-            $("#menu-items .menu-header .close, #overlay").click(function() {
+            $("#menu-items .menu-header .close, #overlay").click(function () {
                 hide_menu();
             });
             // Nav controls
             var title = $('header nav p span');
 
             function navControlsHandler(thisNavBtn, otherPages, thisPage, otherNavBtns, titleCursorSetting, pageContent) {
-                thisNavBtn.click(function() {
+                thisNavBtn.click(function () {
                     if (!thisNavBtn.hasClass("active")) {
                         hide_menu();
-                        otherPages.fadeOut(500).promise().done(function() {
+                        otherPages.fadeOut(500).promise().done(function () {
                             thisPage.fadeIn(500);
                         });
-                        title.mouseenter(function() {
+                        title.mouseenter(function () {
                             title.css("cursor", titleCursorSetting);
                         });
                         thisNavBtn.addClass("active");
@@ -735,10 +785,10 @@
             // Click on title
             title.click(function navControls() {
                 if (!$("calculator-li").hasClass("active")) {
-                    $("#about, #math").fadeOut(500).promise().done(function() {
+                    $("#about, #math").fadeOut(500).promise().done(function () {
                         $("#calculator").fadeIn(500);
                     });
-                    title.mouseenter(function() {
+                    title.mouseenter(function () {
                         title.css("cursor", "default");
                     });
                     $("#calculator-li").addClass("active");
@@ -747,14 +797,14 @@
             });
         })();
     });
-    $(document).ready(function() {
-        $('body').fadeIn('slow', function() {
+    $(document).ready(function () {
+        $('body').fadeIn('slow', function () {
             $('#calculator').fadeIn('slow');
         });
-        $(function() {
+        $(function () {
             // This will select everything with the class smoothScroll
             // This should prevent problems with carousel, scrollspy, etc...
-            $('.smoothScroll').click(function() {
+            $('.smoothScroll').click(function () {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -768,7 +818,7 @@
             });
         });
         //Check to see if the window is top if not then display button
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('.back-to-top a').fadeIn();
             } else {
@@ -776,13 +826,13 @@
             }
         });
         //Click event to scroll to top
-        $('.back-to-top').click(function() {
+        $('.back-to-top').click(function () {
             $('html, body').animate({
                 scrollTop: 0
             }, 500);
             return false;
         });
     });
-
-
 }();
+
+},{}]},{},[1]);

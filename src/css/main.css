@@ -98,6 +98,7 @@
                   position: relative;
                   right: 1rem;
                   text-shadow: none;
+                  -webkit-transition: all .3s;
                   transition: all .3s;
                   width: 10%; }
                   body .wrapper header nav .menu .menu-items .menu-header .close:focus, body .wrapper header nav .menu .menu-items .menu-header .close:hover {
@@ -116,6 +117,7 @@
                   margin-top: -.5rem;
                   padding: 0 0 0 1.5rem;
                   text-align: left;
+                  -webkit-transition: all .3s;
                   transition: all .3s; }
                   body .wrapper header nav .menu .menu-items ul li:first-child {
                     margin-top: 0; }
@@ -165,6 +167,7 @@
               line-height: 1.5; }
             body .wrapper main .main-wrapper .about a {
               border-bottom: 1px solid transparent;
+              -webkit-transition: all .3s;
               transition: all .3s; }
               body .wrapper main .main-wrapper .about a:hover {
                 border-color: #0af;
@@ -243,13 +246,15 @@
                   outline: none;
                   position: relative;
                   top: .1rem;
-                  transform: scale(0.98, 0.98); }
+                  -webkit-transform: scale(0.98, 0.98);
+                          transform: scale(0.98, 0.98); }
               body .wrapper main .main-wrapper .calculator form fieldset .preview-image {
                 border: 1px solid black;
                 border-radius: .4rem;
                 box-shadow: 0.1rem 0.2rem 0.1rem 0 rgba(0, 0, 0, 0.4);
                 margin: 3.3rem 0 0 2.1rem;
                 position: absolute;
+                -webkit-transition: all .15s;
                 transition: all .15s;
                 width: 3.6rem;
                 z-index: 2; }
@@ -278,6 +283,7 @@
                 body .wrapper main .main-wrapper .calculator .table-div table thead tr th {
                   border-bottom: 0; }
                 body .wrapper main .main-wrapper .calculator .table-div table tbody tr {
+                  -webkit-transition: all .3s;
                   transition: all .3s; }
                   body .wrapper main .main-wrapper .calculator .table-div table tbody tr:hover {
                     background-color: #fafafa; }
@@ -287,6 +293,7 @@
                     border-bottom: 1px solid transparent;
                     color: #07e;
                     text-decoration: none;
+                    -webkit-transition: all .3s;
                     transition: all .3s; }
                     body .wrapper main .main-wrapper .calculator .table-div table tbody tr td a:focus, body .wrapper main .main-wrapper .calculator .table-div table tbody tr td a:hover {
                       border-color: #0af;
@@ -381,6 +388,7 @@
               font-size: 1.5rem; }
             body .wrapper main .main-wrapper .math a {
               border-bottom: 1px solid transparent;
+              -webkit-transition: all .3s;
               transition: all .3s; }
               body .wrapper main .main-wrapper .math a:hover {
                 border-color: #0af;
@@ -501,6 +509,7 @@
         border-radius: .5rem;
         box-shadow: 0 0.5rem 0.8rem 0 rgba(0, 0, 0, 0.7);
         margin: -16rem auto 0;
+        -webkit-transition: all .25s;
         transition: all .25s;
         width: 5rem; }
     body .wrapper .main .main-wrapper .calculator .table-div {
@@ -581,6 +590,7 @@
   body .wrapper .main .main-wrapper .calculator form fieldset .preview-image {
     margin-left: -6rem;
     margin-top: -3.4rem;
+    -webkit-transition: all .3s;
     transition: all .3s; }
   body .wrapper .main .main-wrapper .calculator .table-div {
     margin-top: 2.5rem; }
