@@ -108,7 +108,7 @@
             image: "http://i.imgur.com/PQfP7Su.png",
             cuts: [
                 new Cut(72, 2, "size_2x4", 0, 0),
-                new Cut(60, 7, "size_2x", 0, 0),
+                new Cut(60, 7, "size_2x4", 0, 0),
                 new Cut(10.75, 9, "size_2x4", 0, 0),
                 new Cut(22, 2, "size_2x4", 10, 0)
             ],
