@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:description" content="Optimizes lumber orders for Care Force schematics.">
+    <meta name="twitter:description" content="Optimizes lumber orders for Care Force schematics.">
+    <meta name="author" content="Brenton Cozby">
+    <link rel="Shortcut Icon" href="http://www.scaryscarynight.com/images/logo-cityyear.png" type="image/x-icon">
+    <meta property="og:title" content="Care Force Lumber Calculator">
+    <meta name="twitter:title" content="Care Force Lumber Calculator">
+    <title>Lumber Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Overlock+SC|PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/print.min.css" type="text/css" media="print">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body ng-app="myApp">
+
+
+    <!-- This overlay only appears when an image is clicked -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <div class="wrapper">
+
+
+        <!-- Header -->
+        <header class="container header">
+
+            <nav>
+
+                <div id="menu" class="menu">
+
+                    <div id="menu-button" class="menu-button">
+
+                        <button type="button"><p>Menu</p></button>
+                    </div>
+
+
+                    <div id="menu-items" class="menu-items">
+                        <div class="menu-header">
+                            <p class="menu-word">Menu</p>
+                            <p class="close">x</p>
+                        </div>
+                        <ul>
+                            <li id="about-li">About</li>
+                            <li id="calculator-li" class="active">Calculator</li>
+                            <li id="math-li">Check the Math</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p id="title" class="title"><span>Lumber Calculator</span></p>
+            </nav>
+        </header>
+
+
+        <!-- AngularJS used to dynamically create HTML based on user input -->
+        <main id="main" class="main container" ng-controller="schemController">
+            <div class="main-wrapper">
+
+                <!-- About section -->
+                <section id="about" class="about view">
+                    <p class="heading">About</p>
+                    <p>Lazy people will go out of their way just to be a little bit lazier. This website was created by a lazy person.</p>
+                    <p>My name is <a title="I know it's cheesy, but yes--I have my own website" target="_blank" href="http://brentoncozby.com">Brenton Cozby</a>. On a random Tuesday afternoon in February, 2016, I was sitting behind my desk at the <a title="City Year Miami website"
+                            target="_blank" href="https://www.cityyear.org/miami">City Year Miami</a> headquarters doing some math. "How many two-by-sixes do I need to order from Home Depot if I want to build 9 benches for this school?" I wondered. At the
+                        time, my job at City Year was planning beautification projects for under-served schools.</p>
+                    <p>Normally, I would look at the schematic for "Backed Bench", see how many two-by-sixes it says are required to build a bench, and multiply that number by 9. But this created a lot of wasted wood. So, I tried to figure out how to fit
+                        more pieces into less wood. A few months of computer programming classes and several online tutorials later, <span>Lumber Calculator</span> was born! Sort of...</p>
+                    <p>At first, I did the calculations on paper, and then on Excel; but even Excel had its limitations so that's why I turned to making my own calculator using the C programming language--at first--and then JavaScript later &#40;the language
+                        this webpage uses&#41;. This calculator was saving me wood and money--about <a title="Check the math &#40;Google Spreadsheet&#41;" target="blank" href="https://docs.google.com/spreadsheets/d/1tZeuBesO4tMaunjXckQteuQIQLz2f4vBDrn8fAdAVss/edit?usp=sharing">5-20% in cost savings</a>,
+                        depending on what I was building and how many.</p>
+                    <p>Ever since building this calculator, what used to take a few hours on pen and paper now takes a lazy click of a button. &#128521;</p>
+                </section>
+
+                <section id="calculator" class="calculator view">
+
+                    <section class="row">
+
+                        <form class="form-inline" role="form">
+
+                            <fieldset>
+
+                                <div class="form-group preview-div">
+
+                                    <img id="preview-image" title="Schematic preview" class="preview-image img-responsive" ng-src="{{ preview }}">
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="control-label schem-label" for="schem-select">Schematic: </label>
+                                    <select id="schem_selected" name="schem-select" class="schem-selected form-control input-sm" ng-model="schem_selected" ng-change="schem_change(schem_selected)" required autofocus>
+
+                                 <option ng-repeat="schematic in schematics">{{ schematic.name }}</option>
+                              </select>
+                                </div>
+
+                                <div class="form-group quantity-group" id="quantity-group">
+
+                                    <label class="control-label quant-label" for="quant-select">Quantity: </label>
+                                    <input id="quantity" type="number" name="quant-select" class="quantity form-control input-sm" ng-model="quantity" required>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <button id="calc_button" class="calc-button btn btn-default input-sm" type="submit" ng-click="btn_press(quantity, schem_selected)">Calculate</button>
+                                    <p id="validate" class="validate"></p>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </section>
+
+
+                    <!-- Table displaying optimized lumber order -->
+                    <section id="table-div" class="row table-div">
+                        <table id="summary" class="table table-bordered table-responsive"></table>
+                    </section>
+
+
+                    <!-- Cut List -->
+                    <h3 id="cut_list_h3" class="cut-list-h3">Cut List</h3>
+                    <div id="cut_list" class="cut-list"></div>
+
+
+                </section>
+
+                <section id="math" class="math view">
+                    <p class="heading">Check the Math</p>
+                    <p>To check the math of these calculations, view this <a title="Check the math &#40;Google Spreadsheet&#41;" target="blank" href="https://docs.google.com/spreadsheets/d/1tZeuBesO4tMaunjXckQteuQIQLz2f4vBDrn8fAdAVss/edit?usp=sharing">Google Spreadsheet</a>.
+                        It shows you the micro-calculations within each calculation.</p>
+                    <p>If you're intereted in seeing how this thing really works, click on the button at the top right of this webpage. It should say "Edit in JSbin". That will show you all the code and allow you to tinker with it. Don't worry--none of the
+                        changes you make will be permanent. Only I can do that. &#128540;</p>
+                    <p>And if you've checked the math and find something wrong or something that can be improved, please <a title="opens a new email addressed to BrentonCozby@gmail.com" href="mailto:brenton.cozby@gmail.com" target="_blank">tell me</a>!</p>
+
+                </section>
+
+
+                <div id="back-to-top" class="back-to-top">
+                    <a href="#title"></a>
+                </div>
+
+            </div>
+        </main>
+
+
+        <footer class="footer">
+            <div class="container">
+                <address class="address">
+                    <!-- Not a real copyright -->
+                    <p>&copy; 2016. This website was created by <a target="_blank" title="BrentonCozby.com" href="http://brentoncozby.com">Brenton Cozby</a>.</p>
+               </address>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <!-- AngularJS -->
+    <script src="http://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <!-- local files -->
+    <script src="js/bundle.min.js"></script>
+
+</body>
+
+</html>
