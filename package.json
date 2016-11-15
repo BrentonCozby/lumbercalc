@@ -4,17 +4,13 @@
   "description": "Optimizes lumber orders for Care Force schematics.",
   "main": "index.html",
   "scripts": {
-    "build-js": "browserify src/js/main.js -o src/js/bundle.js",
-    "build-js-min": "browserify src/js/main.js | uglifyjs -o dist/js/bundle.min.js",
     "sass": "node-sass src/css/main.scss src/css/main.css",
     "autoprefixer": "postcss --use autoprefixer src/css/main.css -d src/css",
     "build-css": "npm run sass && npm run autoprefixer",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "cleancss": "cleancss -o dist/css/main.min.css src/css/main.css ",
     "build-css-min": "npm run sass && npm run autoprefixer && npm run cleancss",
-    "watch-css-min": "nodemon -e scss -x \"npm run build-css-min\"",
-    "build-src": "npm run build-js & npm run build-css",
-    "build-dist": "npm run build-js-min & npm run build-css-min"
+    "watch-css-min": "nodemon -e scss -x \"npm run build-css-min\""
   },
   "repository": {
     "type": "git",
